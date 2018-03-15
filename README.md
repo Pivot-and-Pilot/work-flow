@@ -1,16 +1,16 @@
 # Pivot and Pilot development setup
 
 ## Setup Wordpress starter theme with underscore 
-1. Download latest Wordpress version [here](https://en-ca.wordpress.org/txt-download/).
-2. Download starting underscore theme [here](https://underscores.me/). Choose "_sassify!" box in advanced options to use Sass. Other information is optional.
+1. Download latest Wordpress version <a href="https://en-ca.wordpress.org/txt-download/" target="_blank">here</a>.
+2. Download starting underscore theme <a href="https://underscores.me/" target="_blank">here</a>. Choose "_sassify!" box in advanced options to use Sass. Other information is optional.
 3. Put the downloaded underscore them into theme folder of Wordpress.
 4. Setup new database in phpmyadmin.
 5. Install Wordpress and activate the theme.
 
 ## Setup workflow
-- Install [npm](https://www.npmjs.com/get-npm).
-- Install [Gulp](https://github.com/gulpjs/gulp/blob/v3.9.1/docs/getting-started.md).
-- Make gulpfile.js in root directory of the theme folder. Copy the code below into gulpfile.js or refer to [this link](https://www.cssigniter.com/use-sass-gulp-wordpress-theme-plugin-development-workflow/)
+- Install <a href="https://www.npmjs.com/get-npm" target="_blank">npm</a>.
+- Install <a href="https://github.com/gulpjs/gulp/blob/v3.9.1/docs/getting-started.md" target="_blank">Gulp</a>.
+- Make gulpfile.js in root directory of the theme folder. Copy the code below into gulpfile.js or refer to <a href="https://www.cssigniter.com/use-sass-gulp-wordpress-theme-plugin-development-workflow/" target="_blank">this link</a>.
   ```
   const gulp = require('gulp');
   const plumber = require('gulp-plumber');
