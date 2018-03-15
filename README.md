@@ -1,7 +1,7 @@
 # Pivot and Pilot development setup
 
 ## Setup Wordpress starter theme with underscore 
-1. Download latest Wordpress version <a href="https://en-ca.wordpress.org/txt-download/" target="_blank">here</a>.
+1. Download latest Wordpress version <a href="https://en-ca.wordpress.org/txt-download/" target="_blank">here</a>.[here](https://en-ca.wordpress.org/txt-download/){:target="_blank"}.
 2. Download starting underscore theme <a href="https://underscores.me/" target="_blank">here</a>. Choose "_sassify!" box in advanced options to use Sass. Other information is optional.
 3. Put the downloaded underscore them into theme folder of Wordpress.
 4. Setup new database in phpmyadmin.
