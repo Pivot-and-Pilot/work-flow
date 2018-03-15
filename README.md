@@ -79,8 +79,7 @@
   ```
   npm init
   ```
-  and go through the setup process.
-  Then run the command below to install the dependencies:
+  and go through the setup process. Then run the commands below to install the dependencies:
   ```
   npm i --save-dev gulp
   npm i --save-dev gulp-group-css-media-queries 
