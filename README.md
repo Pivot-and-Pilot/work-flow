@@ -95,7 +95,9 @@
   /**
    * Default task executed by running `gulp`
    */
-  gulp.task('default', ['watch:sass','js','css']);
+   gulp.task('default', ['watch:sass']);
+
+   gulp.task('build', ['js', 'css']);
 
   ```
 - On Terminal(MacOS)/Command Line(Windows) run:
@@ -106,7 +108,9 @@
   ```
   npm i --save-dev gulp gulp-group-css-media-queries gulp-plumber gulp-postcss gulp-sass autoprefixer browser-sync gulp-uglify gulp-minify-css gulp-concat
   ```
-  
+- Run ```gulp``` to start BrowserSync and start developing.
+- After the development process is done, run ```gulp build``` to minify and ugify the .css and .js files.
+- Enquere the final .css and .js files in function.php.
 ## Setup Git/Github Repo
 1. Make .gitignore in the theme folder and include:
   - node_modules
