@@ -9,7 +9,7 @@
 6. In the root directory, make a folder named "src" with 2 sub folders named "scripts" and "styles". 
 7. Make a folder named "css" in the "styles" folder above.
 8. Put all the "scripts" folder above, put all the .js files there.
-9. Make a folder named "build" with 2 sub folders "scripts" and "styles", the concatted and minified .js and .css file will be found here.
+9. Make a folder named "build" with 2 sub folders "scripts" and "styles", the concatted and minified .js and .css files will be found here.
 
 
 ## Setup workflow
