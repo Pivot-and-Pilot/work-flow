@@ -6,6 +6,11 @@
 3. Put the downloaded underscore them into theme folder of Wordpress.
 4. Setup new database in phpmyadmin.
 5. Install Wordpress and activate the theme.
+6. In the root directory, make a folder named "src" with 2 sub folders named "scripts" and "styles". 
+7. Make a folder named "css" in the "styles" folder above.
+8. Put all the "scripts" folder above, put all the .js files there.
+9. Make a folder named "build" with 2 sub folders "scripts" and "styles", the concatted and minified .js and .css file will be found here.
+
 
 ## Setup workflow
 - Install <a href="https://www.npmjs.com/get-npm" target="_blank">npm</a>.
@@ -20,6 +25,9 @@
   // const sourcemaps = require('gulp-sourcemaps');
   const groupmq = require('gulp-group-css-media-queries');
   const bs = require('browser-sync');
+  const concat = require('gulp-concat');
+  const uglify = require('gulp-uglify');
+  const minify = require('gulp-minify-css');
 
   /**
    * Compile Sass files
@@ -45,7 +53,7 @@
         ])
       )
       .pipe(groupmq()) // Group media queries!
-      .pipe(gulp.dest('./css')) // Output compiled files in the CSS folder
+      .pipe(gulp.dest('./src/styles/css')) // Output compiled files in the CSS folder
       .pipe(bs.stream())
   ); // Stream to browserSync
 
@@ -68,11 +76,25 @@
 
     gulp.watch('sass/**/*.scss', ['compile:sass']);
   });
+  
+  gulp.task('js', function(){
+   gulp.src('src/scripts/*.js')
+   .pipe(concat('script.js'))
+   .pipe(uglify())
+   .pipe(gulp.dest('build/scripts/'));
+  });
+
+  gulp.task('css', function(){
+     gulp.src('src/styles/css/*.css')
+     .pipe(concat('styles.css'))
+     .pipe(minify())
+     .pipe(gulp.dest('build/styles/'));
+  });
 
   /**
    * Default task executed by running `gulp`
    */
-  gulp.task('default', ['watch:sass']);
+  gulp.task('default', ['watch:sass','js','css']);
 
   ```
 - On Terminal(MacOS)/Command Line(Windows) run:
@@ -88,6 +110,7 @@
   npm i --save-dev gulp-sass
   npm i --save-dev autoprefixer
   npm i --save-dev browser-sync
+  npm i --save-dev gulp-uglify gulp-minify-css gulp-concat
   ```
   
 ## Setup Git/Github Repo
