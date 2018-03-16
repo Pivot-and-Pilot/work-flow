@@ -23,7 +23,6 @@
   const sass = require('gulp-sass');
   const postcss = require('gulp-postcss');
   const autoprefixer = require('autoprefixer');
-  // const sourcemaps = require('gulp-sourcemaps');
   const groupmq = require('gulp-group-css-media-queries');
   const bs = require('browser-sync');
   const concat = require('gulp-concat');
@@ -64,15 +63,6 @@
   gulp.task('watch:sass', ['compile:sass'], () => {
     bs.init({
       proxy: 'http://localhost:8888/soberlife',
-      // proxy: {
-      //   target: 'http://localhost:8888/mariadecotiis',
-      //   middleware: [
-      //     function (req, proxyRes, next) {
-      //       proxyRes.setHeader('Access-Control-Allow-Origin', 'Origin, X-Requested-With, Content-Type, Accept');
-      //       proxyRes.setHeader('connection', 'open');
-      //       next();
-      //   }]
-      // }
     });
 
     gulp.watch('sass/**/*.scss', ['compile:sass']);
@@ -95,7 +85,7 @@
   /**
    * Default task executed by running `gulp`
    */
-   gulp.task('default', ['watch:sass', 'css', 'js'], function () {
+  gulp.task('default', ['watch:sass', 'css', 'js'], function () {
     // watch for CSS changes
     gulp.watch('src/styles/css/*.css', function() {
       // run css upon changes
@@ -107,7 +97,6 @@
       gulp.run('js');
     });
   });
-
   ```
 - On Terminal(MacOS)/Command Line(Windows) run:
   ```
