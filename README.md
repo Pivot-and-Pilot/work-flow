@@ -81,14 +81,14 @@
    gulp.src('src/scripts/*.js')
    .pipe(concat('script.js'))
    .pipe(uglify())
-   .pipe(gulp.dest('build/scripts/'));
+   .pipe(gulp.dest('build/scripts/')); // the final minified and concatted .js file will be found here
   });
 
   gulp.task('css', function(){
      gulp.src('src/styles/css/*.css')
      .pipe(concat('styles.css'))
      .pipe(minify())
-     .pipe(gulp.dest('build/styles/'));
+     .pipe(gulp.dest('build/styles/')); // the final minified and concatted .css file will be found here
   });
 
   /**
