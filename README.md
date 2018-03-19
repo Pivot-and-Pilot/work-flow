@@ -28,6 +28,7 @@
   const concat = require('gulp-concat');
   const uglify = require('gulp-uglify');
   const minify = require('gulp-minify-css');
+  const imagemin = require('gulp-imagemin');
 
   /**
    * Compile Sass files
@@ -94,7 +95,7 @@
   /**
    * Default task executed by running `gulp`
    */
-  gulp.task('default', ['watch:sass', 'css', 'js'], function () {
+  gulp.task('default', ['watch:sass', 'css', 'js', 'img'], function () {
     // watch for CSS changes
     gulp.watch('src/styles/css/*.css', function() {
       // run css upon changes
