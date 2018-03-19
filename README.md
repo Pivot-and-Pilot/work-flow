@@ -110,10 +110,12 @@
 - Enquere the final .css and .js files in function.php.
 ## Setup Git/Github Repo
 1. Make .gitignore in the theme folder and include:
-  - node_modules
-  - .npm-debug.log
-  - tmp
-  - .sass-cache
-  - *.css.map
-  - DS_STORE
-  - build
+```
+node_modules/
+.npm-debug.log
+tmp/
+.sass-cache
+*.css.map
+DS_STORE
+build/
+```  
