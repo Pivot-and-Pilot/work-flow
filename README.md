@@ -95,22 +95,18 @@
   /**
    * Default task executed by running `gulp`
    */
-  gulp.task('default', ['watch:sass', 'css', 'js', 'img'], function () {
+  gulp.task('default', ['watch:sass', 'css', 'img'], function () {
     // watch for CSS changes
     gulp.watch('src/styles/css/*.css', function() {
       // run css upon changes
       gulp.run('css');
-    });
-    // watch for JS changes
-    gulp.watch('src/scripts/*.js', function() {
-      // run js upon changes
-      gulp.run('js');
     });
     // watch for images changes
     gulp.watch('img/src/*.{png,jpg,gif}', function() {
       gulp.run('img');
     });
   });
+  gulp.task('build', ['js']);
   ```
 - On Terminal(MacOS)/Command Line(Windows) run:
   ```
