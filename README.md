@@ -81,6 +81,15 @@
      .pipe(minify())
      .pipe(gulp.dest('build/styles/')); // the final minified and concatted .css file will be found here
   });
+  
+  gulp.task('img', function() {
+  gulp.src('img/src/*.{png,jpg,gif}')
+  .pipe(imagemin({
+    optimizationLevel: 7,
+    progressive: true
+  }))
+  .pipe(gulp.dest('img'))
+  });
 
   /**
    * Default task executed by running `gulp`
@@ -96,6 +105,10 @@
       // run js upon changes
       gulp.run('js');
     });
+    // watch for images changes
+    gulp.watch('img/src/*.{png,jpg,gif}', function() {
+      gulp.run('img');
+    });
   });
   ```
 - On Terminal(MacOS)/Command Line(Windows) run:
@@ -104,7 +117,7 @@
   ```
   and go through the setup process. Then run the commands below to install the dependencies:
   ```
-  npm i --save-dev gulp gulp-group-css-media-queries gulp-plumber gulp-postcss gulp-sass autoprefixer browser-sync gulp-uglify gulp-minify-css gulp-concat
+  npm i --save-dev gulp gulp-group-css-media-queries gulp-plumber gulp-postcss gulp-sass autoprefixer browser-sync gulp-uglify gulp-minify-css gulp-concat gulp-imagemin
   ```
 - Run ```gulp``` to start BrowserSync and start developing.
 - Enquere the final .css and .js files in function.php.
