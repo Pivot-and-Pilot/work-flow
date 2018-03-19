@@ -131,4 +131,5 @@ tmp/
 *.css.map
 DS_STORE
 build/
+img/src
 ```  
