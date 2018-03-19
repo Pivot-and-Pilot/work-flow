@@ -26,7 +26,7 @@
   const groupmq = require('gulp-group-css-media-queries');
   const bs = require('browser-sync');
   const concat = require('gulp-concat');
-  const uglify = require('gulp-uglify-es');
+  const uglify = require('gulp-uglify-es').default;
   const minify = require('gulp-minify-css');
   const imagemin = require('gulp-imagemin');
 
