@@ -62,7 +62,7 @@
    */
   gulp.task('watch:sass', ['compile:sass'], () => {
     bs.init({
-      proxy: 'http://localhost:8888/soberlife',
+      proxy: 'http://localhost:8888/soberlife', //change the name of the project here
     });
 
     gulp.watch('sass/**/*.scss', ['compile:sass']);
@@ -70,14 +70,14 @@
   
   gulp.task('js', function(){
    gulp.src('src/scripts/*.js')
-   .pipe(concat('script.js'))
+   .pipe(concat('final-script.js'))
    .pipe(uglify())
    .pipe(gulp.dest('build/scripts/')); // the final minified and concatted .js file will be found here
   });
 
   gulp.task('css', function(){
      gulp.src('src/styles/css/*.css')
-     .pipe(concat('styles.css'))
+     .pipe(concat('final-styles.css'))
      .pipe(minify())
      .pipe(gulp.dest('build/styles/')); // the final minified and concatted .css file will be found here
   });
