@@ -116,3 +116,4 @@
   - .sass-cache
   - *.css.map
   - DS_STORE
+  - build
